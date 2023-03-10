@@ -1,0 +1,10 @@
+const router = require('express').Router()
+const createPDF = require('../controllers/createPDF')
+const download = require('../controllers/download')
+const getAll = require('../controllers/getAll')
+const remove = require('../controllers/remove')
+router.get('/getAll',getAll)
+router.post('/createPdf',createPDF)
+router.post('/download',download)
+router.delete('/delete',remove)
+module.exports = router;

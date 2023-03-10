@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        body{
+            width: 200mm;
+            height: 285mm;
+            padding: 0 40px;
+        }
+        .container{
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+        }
+        .header{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+        }
+       .firstP{
+        font-size: 9pt;
+        text-align: start;
+       }
+       img{
+        max-width: 200px;
+       }
+       .infolist{
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        font-size: 11pt;
+       }
+       ul{
+        list-style: none;
+       }
+       #brand{
+        margin-bottom: 10px;
+        font-size: 1em;
+       }
+       table, td, th {
+        border: 1px solid;
+       }
+       td, th{
+        padding: 3px;
+       }
+       th{
+        text-align: center;
+       }
+       table{
+        width: 100%;
+        border-collapse: collapse;
+       }
+       .cost{
+        border: 1px solid black;
+        width: 100px;
+        text-align: right;
+        margin: 0 4px;
+        padding-right: 2px;
+       }
+       #costs{
+        margin-left: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        width: 100%;
+       }
+       #costs li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        margin: 2px 0;
+       }
+       hr{
+        height:1px;
+        border-width:0;
+        background-color:#000;
+        width: 100%;
+        margin: 35px 0;
+       }
+       .summary{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+                align-items: stretch;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+                justify-content: space-between;
+        width: 100%;
+        font-size: 10pt;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img style="margin-right: 20px;" src="https://deltatour.uz/img/DELTA.png" alt="">
+            <div>
+                <h2 id="brand">OOO "DELTA SMART PROJECT"</h2>
+                <p class="firstP">
+                    Manzil: Toshkent shaxar Yunusobod tumani 5-daxa 4-dom 51-xonadon <br>
+                    Tel: +998908239999 / +998903003707 / +998935518383 <br>
+                    Bank: "Узаутосаноат курилиш банк" ATB / BMM-DOM24 <br>
+                    X/R: 202080004055014337001 / INN: 309345061 <br>
+                    E-Mail: Deltatour@mail.ru <br>
+                    Sayt: www.deltatour.uz
+                </p>
+            </div>
+        </div>
+        <h2 style="margin: 20px 0;">Turistik xizmatlar uchun to'lov kvitansiyasi</h2>
+        <div class="infolist">
+                <ul>
+                    <li>№ {{data.number}}</li>
+                    <li>TUR {{data.city}} ga</li>
+                    <li>Turist soni {{data.members}} ta</li>
+                </ul>
+                <ul>
+                    <li>sana {{data.dateNow}} yil</li>
+                    <li>{{data.dateFrom}} yildan {{data.dateTo}} yilgacha</li>
+                </ul>
+        </div>
+        <table style="margin-bottom: 20px;">
+            <thead>
+                <th>№</th>
+                <th>Xizmatlar</th>
+                <th>To'liq ma'lumotlar</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>Aviachiptalar</td>
+                    <td>{{data.aviaTicket}}</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Transfer</td>
+                    <td>{{data.transfer}}</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Mehmonxona</td>
+                    <td>{{data.hotel}}</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td>Ovqatlanish turi</td>
+                    <td>{{data.foodType}}</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td>Tibbiy sug'urta</td>
+                    <td>{{data.medical}}</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td>Viza</td>
+                    <td>{{data.visas}} ta</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul id="costs">
+            <li>Tur uchun jami to'lanadigan summa (UZS) <div class="cost"> {{data.cost}} </div></li>
+            <li>Xizmat ko'rsatuvchi provayderning dollar kursi(USD&UZS) <div class="cost"> {{data.val}} </div></li>
+            <li>Jami summa(USD)<div class="cost">{{data.cost}}</div></li>
+            <li>Jami turist to'lagan summa(UZS) <div class="cost"> {{data.payed}} </div></li>
+            <li>To'lanishi kerak bo'lgan qoldiq summa(UZS) <div class="cost"> {{data.payed}} </div></li>
+            <li>Qoldiq summa(USD)<div class="cost">{{data.payed}}</div></li>
+        </ul>
+        <h3 style="margin: 20px 0;">Xizmatlar bekor bo'lganda qo'yiladigan shartlar!</h3>
+        <ul style="list-style: decimal; width: 90%; font-size: 10pt;">
+            <li>Mijoz qoldiq summani parvozga 14 kun qolgunhga qadar 100% amalga oshirishi zarur!!!</li>
+            <li>Xizmatlarni xarid(bron) qilgandan so'ng ma'lum bir sabablarga ko'ra bekor qilgan taqdirda, parvozga kamida 20 kun qolgan bo'lsa turpaketning jami summasidan 5% miqdorida ushlab qolinadi</li>
+            <li>Parvozga 11-15 kun qolgan bo'lsa xizmatlarni jami summasidan 35% jarima ushlab qolinadi.</li>
+            <li>Parvozga 8-10 kun qolgan bo'lsa xizmatlarni jami summasidan 55% jarima ushlab qolinadi.</li>
+            <li>Parvozga 7-1 kun qolgan bo'lsa xizmatlarni jami summasidan 100% jarima ushlab qolinadi.</li>
+            <li>Oldindan xarid qilingan xizmatni boshqa bir mijoz nomiga xujjatlarni qayta rasmiylashtirilishi lozim taqdirda 15% dan 20% gacha jarima ushlab qolinadi.</li>
+            <li>Agar mijozni O'zbekiston Respublikasi xududidan tashqariga chiqshi taqiq bo'lsam nijozni shaxsiy xujjatlarida kamchilik bo'lib reysdan qolsa yoki Covid 19 aniqlansa MCHJ "DELTA SMART PROJECT" javobgarlikni o'z zimmasiga olmaydi. Shuningdek to'langan summa qaytarilmaydi</li>            
+        </ul>
+        <hr>
+        <div class="summary">
+            <table style="width: 45%; height: 150px; z-index: -1;">
+                <thead>
+                    <th colspan="2">DELTA SMART PROJECT</th>
+                </thead>
+                <tbody>
+                   <tr>
+                    <td>
+                        <img style="position: absolute; width: 150px; margin-left: 30px; margin-top: -50px; rotate: -32deg; z-index: 3;" src="https://abali.ru/wp-content/uploads/2011/04/pechat.png">
+                        Rahbar: Abdunabiyev S _________________ <br> <img style="position: absolute; margin-left: 100px; margin-top: -70px; width: 130px; z-index: 0;" src="https://www.fbras.ru/wp-content/uploads/2015/02/Podpis-Popova_chb-bez-fona.png" alt="">
+                        +998908239999 <br>
+                        Menejer ______________________________
+                    </td>
+                   </tr>
+                </tbody>
+            </table>
+            <table style="width: 50%; height: 150px;">
+                <thead>
+                    <th colspan="2">TURIST</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F.I.SH</td>
+                        <td>{{data.fName}} {{data.lName}} {{data.fatherName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Manzil</td>
+                        <td>Toshkent</td>
+                    </tr>
+                    <tr>
+                        <td>Passport</td>
+                        <td>{{data.passport}}</td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td>{{data.pNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td>Imzo</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
