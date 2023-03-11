@@ -8,7 +8,7 @@ module.exports = async (req,res)=>{
     console.log(req.body)
     newClient.save().then(client=>{
         const { _id, number, city, members, dateNow, dateFrom, dateTo, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName} = client;
-        res.sendFile(path.join(__dirname,'output','DELTA.png'),function (err){
+        res.sendFile(path.join(__dirname,'../output','DELTA.png'),function (err){
             if(err) res.json(err)
         })
         // generateCard({_id, number, city, members, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName,dateNow: formatDate(dateNow), dateTo: formatDate(dateTo), dateFrom: formatDate(dateFrom)}).then(file =>{
