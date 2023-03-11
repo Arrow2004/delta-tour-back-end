@@ -19,6 +19,7 @@ app.use(cors({
 }))
 app.get('/',(req,res)=>{
   res.send("Hello");
+  
 })
 app.post('/post',(req,res)=>{
     console.log(req.body)
