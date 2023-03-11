@@ -7,7 +7,7 @@ console.log(path.join(__dirname,'../output','response'+'.pdf'));
 module.exports = async (req,res)=>{
     const newClient = new Client({...req.body});
     console.log(req.body)
-    return res.sendFile(path.join(__dirname,'../output','DELTA'+'.png'))
+    return res.sendFile(path.join(__dirname,'../output','response'+'.pdf'))
     newClient.save().then(client=>{
         const { _id, number, city, members, dateNow, dateFrom, dateTo, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName} = client;
         generateCard({_id, number, city, members, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName,dateNow: formatDate(dateNow), dateTo: formatDate(dateTo), dateFrom: formatDate(dateFrom)}).then(file =>{
