@@ -15,14 +15,14 @@ mongoose.connect('mongodb+srv://root:shirina1708@cluster0.ufftb.mongodb.net/delt
     console.log(e)
   });
 app.use(express.json())
-app.use(express.static(path.resolve(process.cwd(), "/")));
+app.use(express.static('output'))
 app.use(cors({
   exposedHeaders: ['_id ']
 }))
 
 app.use('/api',pdfRoute)
 app.get("/", (req, res) => {
-  res.send("Cors, ExpressJson Mongoose Routes");
+  res.sendFile('DELTA.png',{root: path.join(__dirname,'output')})
 });
 app.listen(5000, ()=>{
     console.log('Server is running')
