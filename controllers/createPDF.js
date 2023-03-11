@@ -9,7 +9,6 @@ module.exports = async (req,res)=>{
     newClient.save().then(client=>{
         const { _id, number, city, members, dateNow, dateFrom, dateTo, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName} = client;
         generateCard({_id, number, city, members, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName,dateNow: formatDate(dateNow), dateTo: formatDate(dateTo), dateFrom: formatDate(dateFrom)}).then(file =>{
-            return res.json({fileName: file});
             res.sendFile(path.join(file),{headers: {
                     '_id': _id
                 }},function (err){
