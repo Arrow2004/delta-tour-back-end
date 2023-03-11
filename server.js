@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const pdfRoute = require('./routes/pdfRoute')
 const process = require('process');
+const path = require('path')
 // const env = require('dotenv').config();
 mongoose.connect('mongodb+srv://root:shirina1708@cluster0.ufftb.mongodb.net/deltaTour?retryWrites=true&w=majority',{
     useNewUrlParser: true,
