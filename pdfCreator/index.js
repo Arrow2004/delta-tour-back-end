@@ -17,6 +17,10 @@ const generateCard = async (data)=>{
           },
         },
        path: `./output/${data._id}.pdf`,
+       phantomPath: path.resolve(
+        process.cwd(),
+        "node_modules/phantomjs-prebuilt/bin/phantomjs"
+        ),
        //path: `./output/1677488876677_john_doe_12345678.pdf`,
         type: "",
       };
