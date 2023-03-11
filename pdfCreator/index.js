@@ -26,7 +26,7 @@ const generateCard = async (data)=>{
         return res.filename;
       })
       .catch((error) => {
-        return error;
+        return {error,type: 'creating function'};
       });
 }
 module.exports = generateCard;

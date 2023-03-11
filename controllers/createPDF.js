@@ -4,7 +4,6 @@ const Client = require('../models/ClientModel')
 const fs = require('fs')
 const formatDate = require('../helpers/formatDate')
 module.exports = async (req,res)=>{
-    res.json(req.body)
     const newClient = new Client({...req.body});
     console.log(req.body)
     newClient.save().then(client=>{
