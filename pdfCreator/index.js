@@ -1,13 +1,14 @@
 const createPdf = require('pdf-creator-node')
 const fs = require('fs')
 const path = require('path')
+console.log(path.join(__dirname,'../','output'))
 const generateCard = async (data)=>{
     const html = fs.readFileSync(path.join(__dirname, '/template.html'), "utf8");
     const options = {
         format: "A4",
         orientation: "portrait",
         border: "5mm",
-          phantomPath: path.resolve(
+        phantomPath: path.resolve(
             process.cwd(),
             "node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs"
           ),
@@ -20,7 +21,7 @@ const generateCard = async (data)=>{
             ...data,
           },
         },
-       path: `./output/${data._id}.pdf`,
+       path: path.join(__dirname,'../','output',`${data._id}.pdf`),
        phantomPath: path.resolve(
         process.cwd(),
         "node_modules/phantomjs-prebuilt/bin/phantomjs"
