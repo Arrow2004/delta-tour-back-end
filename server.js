@@ -20,7 +20,7 @@ const app = express();
 
 // app.use('/api',pdfRoute)
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.send("Hello world");
 });
 app.listen(5000, ()=>{
     console.log('Server is running')
