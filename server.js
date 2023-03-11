@@ -22,7 +22,7 @@ app.use(cors({
 
 app.use('/api',pdfRoute)
 app.get("/", (req, res) => {
-  res.sendFile('DELTA.png',{root: path.join(__dirname,'output')})
+  res.sendFile(path.join(__dirname,'output','DELTA.png'))
 });
 app.listen(5000, ()=>{
     console.log('Server is running')
