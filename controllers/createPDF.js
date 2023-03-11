@@ -18,7 +18,7 @@ module.exports = async (req,res)=>{
             //         }))
             //         if(err) res.json({error: err, type: "sending"})
             //     });
-            return res.sendFile(path.join(file))
+            //return res.sendFile(path.join(file))
             return res.json({path: path.join(__dirname,'../output',_id+'.pdf'), file: file})
             }).catch(err=> res.json({error: err, type: "creating"}));
         }).catch(err=>{
