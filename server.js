@@ -18,8 +18,7 @@ app.use(cors({
   exposedHeaders: ['_id ']
 }))
 app.get('/',(req,res)=>{
-  res.send("Hello");
-  
+  res.json({message: "Test"});
 })
 app.post('/post',(req,res)=>{
     console.log(req.body)
