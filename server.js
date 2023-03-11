@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 // const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
 // const bodyParser = require('body-parser')
 // const pdfRoute = require('./routes/pdfRoute')
 // const env = require('dotenv').config();
@@ -14,9 +14,9 @@ const app = express();
 //     console.log(e)
 //   });
 // app.use(express.json())
-// app.use(cors({
-//   exposedHeaders: ['_id ']
-// }))
+app.use(cors({
+  exposedHeaders: ['_id ']
+}))
 
 // app.use('/api',pdfRoute)
 app.get("/", (req, res) => {
