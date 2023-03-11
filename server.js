@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const pdfRoute = require('./routes/pdfRoute')
+const process = require('process');
 // const env = require('dotenv').config();
 mongoose.connect('mongodb+srv://root:shirina1708@cluster0.ufftb.mongodb.net/deltaTour?retryWrites=true&w=majority',{
     useNewUrlParser: true,
@@ -13,6 +14,7 @@ mongoose.connect('mongodb+srv://root:shirina1708@cluster0.ufftb.mongodb.net/delt
     console.log(e)
   });
 app.use(express.json())
+app.use(express.static(path.resolve(process.cwd(), "/")));
 app.use(cors({
   exposedHeaders: ['_id ']
 }))
