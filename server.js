@@ -13,14 +13,14 @@ const cors = require('cors');
 //   }).catch(e=>{
 //     console.log(e)
 //   });
-// app.use(express.json())
+app.use(express.json())
 app.use(cors({
   exposedHeaders: ['_id ']
 }))
 
 // app.use('/api',pdfRoute)
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.send("Cors, ExpressJson");
 });
 app.listen(5000, ()=>{
     console.log('Server is running')
