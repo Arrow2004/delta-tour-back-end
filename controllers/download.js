@@ -18,7 +18,7 @@ module.exports = (req,res)=>{
                 res.json({_id,file})
             }).catch(err=> res.json({error: err}));
         }).catch(err=>{
-            res.json(err)
+            res.json({msg: "FindOne ishlamayapati"})
         })
     
     
