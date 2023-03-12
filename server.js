@@ -17,7 +17,7 @@ app.use(cors({
   exposedHeaders: ['_id ']
 }))
 app.get('/',(req,res)=>{
-  res.sendFile(path.join(__dirname,'pdfCreator','images', 'podpis.png'))
+  res.sendFile(path.join(__dirname,'output','response.pdf'))
 })
 app.post('/post',(req,res)=>{
     console.log(req.body)
