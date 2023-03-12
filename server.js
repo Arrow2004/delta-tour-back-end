@@ -27,3 +27,4 @@ app.use('/api',pdfRoute)
 app.listen(5000, ()=>{
     console.log('Server is running')
 })
+module.exports = app;
