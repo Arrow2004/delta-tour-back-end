@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bodyParser = require('body-parser')
 const pdfRoute = require('./routes/pdfRoute')
-const env = require('dotenv').config();
+const path = require('path')
 mongoose.connect('mongodb+srv://root:shirina1708@cluster0.ufftb.mongodb.net/deltaTour?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,7 +17,7 @@ app.use(cors({
   exposedHeaders: ['_id ']
 }))
 app.get('/',(req,res)=>{
-  res.send("Hello");
+  res.sendFile(path.join(__dirname,'pdfCreator','images', 'podpis.png'))
 })
 app.post('/post',(req,res)=>{
     console.log(req.body)
