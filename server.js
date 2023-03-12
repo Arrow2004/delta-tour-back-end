@@ -5,7 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const pdfRoute = require('./routes/pdfRoute')
 const env = require('dotenv').config();
-mongoose.connect('mongodb+srv://root:'+process.env.Mongo_Pass+'@cluster0.ufftb.mongodb.net/deltaTour?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://root:shirina1708@cluster0.ufftb.mongodb.net/deltaTour?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(()=>{
