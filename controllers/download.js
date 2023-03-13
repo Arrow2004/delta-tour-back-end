@@ -5,6 +5,8 @@ const Client = require('../models/ClientModel')
 const formatDate = require('../helpers/formatDate')
 module.exports = (req,res)=>{
     const _id = req.body._id;
+    const client = await Client.findById(_id).exec();
+    res.json(client)
     Client.findOne({_id}).then(client=>{     
         res.json({_id})
         const {_id,number,city,members,dateNow,dateFrom,dateTo,aviaTicket,transfer,hotel,foodType,medical,visas,cost,val,payed,passport,phoneNumber,firstName,lastName,fatherName} = client;
