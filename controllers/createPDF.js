@@ -3,7 +3,7 @@ const path = require('path')
 const Client = require('../models/ClientModel')
 const fs = require('fs')
 const formatDate = require('../helpers/formatDate')
-module.exports = async (req,res)=>{
+module.exports = async (req,res,next)=>{
     const newClient = new Client({...req.body});
     newClient.save().then(client=>{
         const { _id, number, city, members, dateNow, dateFrom, dateTo, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName} = client;
