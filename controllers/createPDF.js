@@ -10,16 +10,6 @@ module.exports = async (req,res,next)=>{
     generateCard({_id, number, city, members, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName,dateNow: formatDate(dateNow), dateTo: formatDate(dateTo), dateFrom: formatDate(dateFrom)}).then(file =>{
             res.sendFile(path.resolve( process.cwd(),'output',`${_id}.pdf`),{headers: {
                 '_id': _id
-            }},function (err){
-                if (err) {
-                    next(err);
-                  } else{
-                    try {
-                        fs.unlink(path.resolve( process.cwd(),'output',`${_id}.pdf`)); 
-                      } catch(e) {
-                        console.log("error removing ", path.resolve( process.cwd(),'output',`${_id}.pdf`)); 
-                      }
-                  }
-            });
+            }});
         }).catch(err=> res.json({error: err}));
 }
