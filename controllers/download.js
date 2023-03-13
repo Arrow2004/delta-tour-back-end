@@ -4,24 +4,16 @@ const fs = require('fs')
 const Client = require('../models/ClientModel')
 const formatDate = require('../helpers/formatDate')
 module.exports = async (req,res)=>{
-    const _id = req.body._id;
-    const client = await Client.findById(_id).exec();
-    res.json(client)
-    // Client.findOne({_id}).then(client=>{     
-    //     res.json({_id})
-    //     const {_id,number,city,members,dateNow,dateFrom,dateTo,aviaTicket,transfer,hotel,foodType,medical,visas,cost,val,payed,passport,phoneNumber,firstName,lastName,fatherName} = client;
-    //         generateCard({_id, number, city, members, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName,dateNow: formatDate(dateNow), dateTo: formatDate(dateTo), dateFrom: formatDate(dateFrom)}).then(file =>{
-    //             // res.sendFile(path.join(file),function (err){
-    //             //     fs.unlink(file, (err=>{
-    //             //         if(err) console.log(err);
-    //             //     }))
-    //             //     if(err) res.json({error: err})
-    //             // });
-    //             res.json({_id,file})
-    //         }).catch(err=> res.json({error: err}));
-    //     }).catch(err=>{
-    //         res.json({msg: "FindOne ishlamayapati", error: err})
-    //     })
-    
+    const client = await Client.findById(req.body._id).exec();
+    const {_id,number,city,members,dateNow,dateFrom,dateTo,aviaTicket,transfer,hotel,foodType,medical,visas,cost,val,payed,passport,phoneNumber,firstName,lastName,fatherName} = client;
+    generateCard({_id, number, city, members, aviaTicket, transfer, hotel, foodType, medical, visas, cost, val, payed, passport, phoneNumber, firstName, lastName, fatherName,dateNow: formatDate(dateNow), dateTo: formatDate(dateTo), dateFrom: formatDate(dateFrom)}).then(file =>{
+        // res.sendFile(path.join(file),function (err){
+        //     fs.unlink(file, (err=>{
+        //         if(err) console.log(err);
+        //     }))
+        //     if(err) res.json({error: err})
+        // });
+        res.json({_id,file})
+    }).catch(err=> res.json({error: err}));
     
 }
