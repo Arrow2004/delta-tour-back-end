@@ -21,7 +21,10 @@ const generateCard = async (data)=>{
         type: "",
       };
     return createPdf
-      .create(document, options)
+      .create(document, options,{ phantomPath: path.resolve(
+        process.cwd(),
+        "node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs"
+      ),})
       .then((res) => {
         return res.filename;
       })
