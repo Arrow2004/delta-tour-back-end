@@ -15,5 +15,5 @@ module.exports = async (req,res,next)=>{
     //     res.json({fileName, path: path.join( process.cwd(),'output',`${_id}.pdf`), filelist})
     //   });
     //res.sendFile(path.join( process.cwd(),'output',`${_id}.pdf`));
-    res.json({"message": Buffer.from(fileName).toString('base64')})
+    res.json({"message": Buffer.from(fileName)})
 }
