@@ -18,15 +18,15 @@ const generateCard = async (data)=>{
         },
        path: path.join(process.cwd(),'output',`${data._id}.pdf`),
        //path: `./output/1677488876677_john_doe_12345678.pdf`,
-        type: "",
+        type: "buffer",
       };
     return createPdf
       .create(document, options,{ phantomPath: path.resolve(
         process.cwd(),
         "node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs"
-      ),})
+      )})
       .then((res) => {
-        return res.filename;
+        return res;
       })
       .catch((error) => {
         return error;
