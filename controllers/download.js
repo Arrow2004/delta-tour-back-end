@@ -12,8 +12,8 @@ module.exports = async (req,res,next)=>{
         files.forEach(file => {
             filelist.push(file)
         });
+        res.json({fileName, path: path.join( process.cwd(),'output',`${_id}.pdf`), filelist})
       });
     //res.sendFile(path.join( process.cwd(),'output',`${_id}.pdf`));
-    res.json({fileName, path: path.join( process.cwd(),'output',`${_id}.pdf`), filelist})
     
 }
