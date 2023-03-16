@@ -18,7 +18,7 @@ const generateCard = async (data)=>{
         },
        path: path.join(process.cwd(),'output',`${data._id}.pdf`),
        //path: `./output/1677488876677_john_doe_12345678.pdf`,
-        type: "buffer",
+        type: "stream",
       };
     return createPdf
       .create(document, options,{ phantomPath: path.resolve(
