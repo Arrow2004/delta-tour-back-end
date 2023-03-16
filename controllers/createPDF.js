@@ -11,5 +11,5 @@ module.exports = async (req,res,next)=>{
             res.setHeader('Content-type', 'application/pdf');
             res.setHeader('_id', _id);
             file.pipe(res)
-        }).catch(err=> res.json({error: err}));
+        }).catch(err=> res.json(err));
 }
